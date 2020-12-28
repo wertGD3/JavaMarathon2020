@@ -8,10 +8,11 @@ public class Task3 {
         int a = g.nextInt();
         int b = g.nextInt();
 
-        int i = a;
-        while(a < b){
-            if(i % 5 == 0 && i % 10 !=0){
-                System.out.println(i +" ");i++;
+        int i = a + 1;
+        while (a < b) {
+            if (i % 5 == 0 && i % 10 != 0) {
+                System.out.println(i + " ");
+                i++;
             }
         }
     }

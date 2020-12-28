@@ -8,11 +8,11 @@ public class Task2 {
         int a = scan.nextInt();
         int b = scan.nextInt();
 
-          for(int  i = a;i < b;i++){
-               if(i % 5 == 0 && i % 10 != 0){
-                   System.out.println(i + " ");
-               }
-          }
+        for (int i = a + 1; i < b; i++) {
+            if (i % 5 == 0 && i % 10 != 0) {
+                System.out.println(i + " ");
+            }
+        }
     }
 }
 

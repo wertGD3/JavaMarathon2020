@@ -7,8 +7,8 @@ public class Task2 {
     public static void main(String[] args) {
         int[]arr = new int[100];
         Random g = new Random();
-        int max = 0;
-        int min = 0;
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
         int count = 0;
         int sum = 0;
         for(int i = 0;i < arr.length;i++){
@@ -20,10 +20,9 @@ public class Task2 {
             min = arr[i];
         }if(arr[i] % 10==0){
             count++;
-            sum+=count;
+            sum+=arr[i];
             }
         }
-
         System.out.println("Наибольший элемент массива: " + max);
         System.out.println("Наименьший элемент массива: " + min);
         System.out.println("Количетво элементов массива,оканчивающихся на 0: " + count);
