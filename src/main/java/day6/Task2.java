@@ -49,11 +49,11 @@ public class Task2 {
         }
 
         private void info() {
-            System.out.println("Изготовитель: " + this.producer + " ,год выпуска: " + this.year + " ,длина: " + this.length + " ,вес: " + this.weight + " ,количество топлива в баке: " + getFuel());
+            System.out.println("Изготовитель: " + producer + " ,год выпуска: " + year + " ,длина: " + length + " ,вес: " + weight + " ,количество топлива в баке: " + getFuel());
         }
 
         int fillUp(int n) {
-            fuel = n;
+            fuel = +n;
             return fuel;
         }
     }

@@ -2,7 +2,10 @@ package day6;
 
 public class Task1 {
     public static void main(String[] args) {
-        Car myCar = new Car(2015);
+        Car myCar = new Car();
+        myCar.setYear(2010);
+        myCar.setColor("Black");
+        myCar.setModel("Focus");
         Motorbike myBike = new Motorbike(2015, "Red", "Suzuki");
 
         myCar.info();

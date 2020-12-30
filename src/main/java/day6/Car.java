@@ -4,12 +4,7 @@ class Car {
     private int year;
     private String color;
     private String model;
-    private String name = "автомобиль";
 
-    public Car(int year) {
-        this.year = year;
-
-    }
 
     public void setYear(int year) {
         this.year = year;
@@ -35,19 +30,11 @@ class Car {
         return model;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    void info() {
-        System.out.println("Это " + getName());
+    public void info() {
+        System.out.println("Это мотоцикл");
     }
 
     int yearDifference(int inputYear) {
-        return inputYear - year;
+        return Math.abs(inputYear - year);
     }
 }
