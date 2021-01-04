@@ -14,7 +14,7 @@ public class Task1 {
 }
 
 class Human {
-    String name;
+    private String name;
 
     public Human(String name) {
         this.name = name;
