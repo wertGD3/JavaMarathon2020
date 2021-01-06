@@ -15,7 +15,7 @@ public class TestFigures {
         System.out.println(calculateRedPerimeter(figures));
         System.out.println(calculateRedArea(figures));
     }
-    
+
     public static double calculateRedPerimeter(Figure[] figures) {
         double sum = 0;
 
