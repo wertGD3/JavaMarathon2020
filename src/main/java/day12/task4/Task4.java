@@ -1,11 +1,13 @@
 package day12.task4;
 
+import day12.task5.MusicBand;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Task4 {
+/*public class Task4 {
     public static void main(String[] args)  {
-        List<String>members1 = new ArrayList<>();
+       List<String>members1 = new ArrayList<>();
         members1.add("Дубинин Виталий");
         members1.add("Холстинин Владимир");
         members1.add("Попов Сергей");
@@ -32,4 +34,4 @@ public class Task4 {
         band12.printMembers();
 
     }
-}
+}*/

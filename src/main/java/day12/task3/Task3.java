@@ -35,7 +35,7 @@ public class Task3 {
         Collections.shuffle(muslist);
 
         System.out.println(muslist);
-        
+
         List<MusicBand> groupsAfter2000 = new ArrayList<>();
         for (MusicBand band : muslist) {
             if (band.getYear() > 2000)

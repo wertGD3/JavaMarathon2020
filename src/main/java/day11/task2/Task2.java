@@ -4,34 +4,34 @@ import java.time.chrono.HijrahEra;
 
 public class Task2 {
     public static void main(String[] args) {
-        Warrior war = new Warrior();
-        Paladin pal = new Paladin();
-        Magician mag = new Magician();
-        Shaman sham = new Shaman();
+        Warrior warrior = new Warrior();
+        Paladin paladin = new Paladin();
+        Magician magician = new Magician();
+        Shaman shaman = new Shaman();
 
-        war.physicalAttack(pal);
-        System.out.println(pal);
+        warrior.physicalAttack(paladin);
+        System.out.println(paladin);
 
-        pal.physicalAttack(mag);
-        System.out.println(mag);
+        paladin.physicalAttack(magician);
+        System.out.println(magician);
 
-        sham.healTeammate(mag);
-        System.out.println(mag);
+        shaman.healTeammate(magician);
+        System.out.println(magician);
 
-        mag.magicalAttack(pal);
-        System.out.println(pal);
+        magician.magicalAttack(paladin);
+        System.out.println(paladin);
 
-        sham.physicalAttack(war);
-        System.out.println(war);
+        shaman.physicalAttack(warrior);
+        System.out.println(warrior);
 
-        pal.healHimself();
-        System.out.println(pal);
+        paladin.healHimself();
+        System.out.println(paladin);
 
         System.out.println();
 
         for (int i = 0; i < 5; i++) {
-            war.physicalAttack(mag);
-            System.out.println(mag);
+            warrior.physicalAttack(magician);
+            System.out.println(magician);
         }
 
     }
@@ -45,7 +45,6 @@ abstract class Hero implements PhysAttac {
     protected double physDef;
     protected double magicDef;
     protected int physAtt;
-    protected int magicAtt;
 
     public Hero() {
         health = 100;
@@ -73,11 +72,6 @@ class Warrior extends Hero implements PhysAttac {
     public Warrior() {
         physDef = 0.8;
         physAtt = 30;
-    }
-
-    @Override
-    public void physicalAttack(Hero hero) {
-        super.physicalAttack(hero);
     }
 
     @Override
@@ -116,6 +110,8 @@ class Paladin extends Hero implements Healer {
 }
 
 class Magician extends Hero implements PhysAttac, MagicAttac {
+    private int magicAtt = 20;
+
     public Magician() {
         physDef = 0;
         magicDef = 0.8;
@@ -139,11 +135,15 @@ class Magician extends Hero implements PhysAttac, MagicAttac {
 }
 
 class Shaman extends Hero implements Healer, MagicAttac {
+    private int magicAtt = 15;
+
     public Shaman() {
         physDef = 0.2;
         magicDef = 0.2;
         physAtt = 10;
+
     }
+
 
     public void healHimself() {
         if (health + 50 > HEALTH_MAX) {
@@ -152,7 +152,7 @@ class Shaman extends Hero implements Healer, MagicAttac {
             health += 50;
         }
     }
-    
+
     public void healTeammate(Hero hero) {
         if (hero.health + 30 > HEALTH_MAX) {
             hero.health = 100;

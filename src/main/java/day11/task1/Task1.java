@@ -2,26 +2,26 @@ package day11.task1;
 
 public class Task1 {
     public static void main(String[] args) {
-        Warehouse ware = new Warehouse();
-        Picker pic = new Picker(ware);
-        Courier cour = new Courier(ware);
+        Warehouse warehouse = new Warehouse();
+        Picker picker = new Picker(warehouse);
+        Courier courier = new Courier(warehouse);
 
-        businessProcess(pic);
+        businessProcess(picker);
 
-        System.out.println(pic);
-        System.out.println(ware);
+        System.out.println(picker);
+        System.out.println(warehouse);
 
-        businessProcess(cour);
+        businessProcess(courier);
 
-        System.out.println(cour);
-        System.out.println(ware);
+        System.out.println(courier);
+        System.out.println(warehouse);
     }
 
-    public static void businessProcess(Worker wor) {
+    public static void businessProcess(Worker work) {
         for (int i = 0; i < 10000; i++) {
-            wor.doWork();
+            work.doWork();
         }
-        wor.bonus();
+        work.bonus();
     }
 }
 
@@ -57,12 +57,12 @@ class Warehouse {
 class Picker implements Worker {
     private int salary;
     private boolean isPayed;
-    private static int ЗП = 80;
-    private Warehouse war;
+    private static int money1 = 80;
+    private Warehouse warehouse;
 
-    public Picker(Warehouse warr) {
+    public Picker(Warehouse warehouse) {
 
-        this.war = warr;
+        this.warehouse = warehouse;
 
     }
 
@@ -77,13 +77,13 @@ class Picker implements Worker {
 
     @Override
     public void doWork() {
-        salary += ЗП;
-        war.countPiPlus();
+        salary += money1;
+        warehouse.countPiPlus();
     }
 
     @Override
     public void bonus() {
-        if (war.getCountPickedOrders() < 10000) {
+        if (warehouse.getCountPickedOrders() < 10000) {
             System.out.println("Бонус пока не доступен");
             return;
         }
@@ -100,12 +100,12 @@ class Picker implements Worker {
 class Courier implements Worker {
     private int salary;
     private boolean isPayed;
-    private static int зп1 = 100;
-    private Warehouse Wr;
+    private static int money = 100;
+    private Warehouse Warehouses;
 
-    public Courier(Warehouse Wrr) {
+    public Courier(Warehouse Warehouses) {
 
-        this.Wr = Wrr;
+        this.Warehouses = Warehouses;
     }
 
     @Override
@@ -118,8 +118,8 @@ class Courier implements Worker {
 
     @Override
     public void doWork() {
-        salary += зп1;
-        Wr.cointDelivPlus();
+        salary += money;
+        Warehouses.cointDelivPlus();
 
 
     }
@@ -127,7 +127,7 @@ class Courier implements Worker {
     @Override
     public void bonus() {
 
-        if (Wr.getCountPickedOrders() < 10000) {
+        if (Warehouses.getCountPickedOrders() < 10000) {
             System.out.println("Бонус пока не доступен");
             return;
         }

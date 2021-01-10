@@ -1,15 +1,14 @@
 package day12.task4;
 
-import day12.task5.MusicArtist;
 
 import java.util.List;
 
-public class MusicBand {
+/*public class MusicBand {
     private String name;
     private int year;
     private List<String> members;
 
-    public MusicBand(String name, int year, List<MusicArtist> members) {
+    public MusicBand(String name, int year, List<String> members) {
         this.name = name;
         this.year = year;
         this.members = members;
@@ -40,8 +39,8 @@ public class MusicBand {
     }
     public static void transferMembers(MusicBand a,MusicBand b) {
         for(String people : a.getMembers()) {
-            b.getMembers().add(people);
-            a.getMembers().clear();
+            b.getMembers().add(people);{
+            a.getMembers().clear();}
 
         }
 
@@ -57,4 +56,4 @@ public class MusicBand {
                 ", year=" + year +
                 '}';
     }
-}
+}*/

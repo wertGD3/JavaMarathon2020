@@ -7,7 +7,7 @@ public class MusicBand {
     private int year;
     private List<MusicArtist> members;
 
-    public MusicBand(String name, int year, List<MusicArtist>members) {
+    public MusicBand(String name, int year, List<MusicArtist> members) {
         this.name = name;
         this.year = year;
         this.members = members;
@@ -36,15 +36,17 @@ public class MusicBand {
     public void setMembers(List<MusicArtist> members) {
         this.members = members;
     }
-    public static void transferMembers(MusicBand a,MusicBand b) {
-        for(MusicArtist people : a.getMembers()) {
-            b.getMembers().add(people);
-            a.getMembers().clear();
 
+    public static void transferMembers(MusicBand a, MusicBand b) {
+        for (MusicArtist people : a.getMembers()) {
+            b.getMembers().add(people);
         }
+        a.getMembers().clear();
 
     }
-    public void printMembers(){
+
+
+    public void printMembers() {
         System.out.println(members);
     }
 
